@@ -44,3 +44,22 @@ Migrating to AddListIdToTasks (20210418170936)
   [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ? /* loading for inspect */ LIMIT ?[0m  [["list_id", 1], ["LIMIT", 11]]
   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+Started GET "/lists" for ::1 at 2021-04-20 11:13:10 -0500
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/git-er-done/backend/app/controllers/lists_controller.rb:4: syntax error, unexpected ':', expecting end
+    render: json
+          ^):
+  
+app/controllers/lists_controller.rb:4: syntax error, unexpected ':', expecting end
+app/controllers/lists_controller.rb:4: syntax error, unexpected ':', expecting end
+Started GET "/lists" for ::1 at 2021-04-20 11:14:30 -0500
+Processing by ListsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (2.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 18.7ms | ActiveRecord: 4.2ms | Allocations: 6148)
+
+
