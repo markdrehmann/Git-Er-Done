@@ -72,3 +72,63 @@ Processing by ListsController#index as HTML
 Completed 200 OK in 60ms (Views: 17.7ms | ActiveRecord: 5.8ms | Allocations: 7579)
 
 
+Started GET "/lists" for ::1 at 2021-04-21 15:11:42 -0500
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (2.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 13.0ms | ActiveRecord: 3.4ms | Allocations: 7409)
+
+
+Started GET "/lists" for ::1 at 2021-04-21 15:12:11 -0500
+Processing by ListsController#index as HTML
+Completed 500 Internal Server Error in 29ms (Allocations: 2423)
+
+
+  
+NameError (undefined local variable or method `tasks' for #<ListsController:0x007ffa5068e578>
+Did you mean?  tasks_url):
+  
+app/controllers/lists_controller.rb:4:in `index'
+Started GET "/lists" for ::1 at 2021-04-21 15:14:16 -0500
+Processing by ListsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 118ms (Views: 105.5ms | ActiveRecord: 8.3ms | Allocations: 12382)
+
+
+Started GET "/lists" for ::1 at 2021-04-21 15:15:05 -0500
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/git-er-done/backend/app/controllers/lists_controller.rb:4: syntax error, unexpected '}', expecting =>
+... :updated_at], include: {tasks}
+...                              ^):
+  
+app/controllers/lists_controller.rb:4: syntax error, unexpected '}', expecting =>
+app/controllers/lists_controller.rb:4: syntax error, unexpected '}', expecting =>
+Started GET "/lists" for ::1 at 2021-04-21 15:16:13 -0500
+Processing by ListsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (2.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 37.6ms | ActiveRecord: 9.3ms | Allocations: 9471)
+
+
+Started GET "/lists" for ::1 at 2021-04-21 15:17:45 -0500
+Processing by ListsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (2.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 79ms (Views: 0.3ms | ActiveRecord: 7.6ms | Allocations: 9204)
+
+
