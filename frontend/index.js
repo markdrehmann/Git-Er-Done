@@ -7,3 +7,7 @@ function getLists() {
     .then(res => res.json())
     .then(data => data.forEach(list => console.log(list)))
 }
+
+document.addEventListener("DOMContentLoaded", 
+  getLists()
+  )
