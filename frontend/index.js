@@ -1,5 +1,9 @@
-function test() {
-  console.log("test text")
+class List {
+  constructor(title, archived, tasks = []) {
+    this.title = title;
+    this.archived = archived
+    this.tasks = tasks;
+  }
 }
 
 function getLists() {
