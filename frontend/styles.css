@@ -41,6 +41,17 @@ input{
   text-align:center;
 }
 
+button {
+  font-size: .5em;
+  color: #fff;
+  background-color: rgb(216, 0, 0);
+  /* border-radius: 10px; */
+  float: right;
+  margin-right: 40px;
+}
+
+
+
 /* above here is for sure, below is untested */
 
 /* main {
@@ -52,24 +63,13 @@ input{
   padding-bottom: 30px;
 }
 
-
+button.release {
+  float: right;
+  background-color: #E1332D;
+}
 
 p {
   font-size: 1.5em;
   color: black;
   font-family: Helvetica;
-}
-
-
-
-button {
-  font-size: .65em;
-  color: #fff;
-  background-color: green;
-  border-radius: 10px;
-}
-
-button.release {
-  float: right;
-  background-color: #E1332D;
 } */
