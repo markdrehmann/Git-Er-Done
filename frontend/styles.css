@@ -9,18 +9,8 @@ header h2 {
 }
 
 form {
+  margin: 20px;
   text-align: center;
-}
-
-/* above here is for sure, below is untested */
-
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-  padding-top: 10px;
-  padding-bottom: 30px;
 }
 
 div.list {
@@ -29,8 +19,36 @@ div.list {
   width: 300px;
   box-shadow: 10px 10px grey;
   padding: 10px;
-  border-radius: 10px;
+  /* border-radius: 0px; */
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
 }
+
+li {
+  list-style: none;
+  /* text-align: center; */
+  /* padding-right: 20px; */
+}
+
+input{
+  text-align:center;
+}
+
+/* above here is for sure, below is untested */
+
+/* main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+
 
 p {
   font-size: 1.5em;
@@ -38,11 +56,7 @@ p {
   font-family: Helvetica;
 }
 
-li {
-  font-size: 1.05em;
-  list-style: none;
-  padding-right: 20px;
-}
+
 
 button {
   font-size: .65em;
@@ -54,4 +68,4 @@ button {
 button.release {
   float: right;
   background-color: #E1332D;
-}
+} */
