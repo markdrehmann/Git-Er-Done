@@ -8,6 +8,10 @@ header h2 {
   text-align: center;
 }
 
+form {
+  text-align: center;
+}
+
 /* above here is for sure, below is untested */
 
 main {
