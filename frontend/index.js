@@ -9,7 +9,8 @@ class List {
 function getLists() {
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
-    .then(data => data.forEach(list => console.log(list)))
+    .then(data => obj = data)
+    .then(() => console.log(obj))
 }
 
 document.addEventListener("DOMContentLoaded", 
