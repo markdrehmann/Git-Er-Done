@@ -6,6 +6,8 @@ class List {
   }
 }
 
+let main = document.querySelector("main")
+
 function getLists() {
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
