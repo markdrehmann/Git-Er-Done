@@ -1467,3 +1467,16 @@ Processing by ListsController#index as */*
 Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2130)
 
 
+Started GET "/lists" for ::1 at 2021-04-27 10:50:05 -0500
+Processing by ListsController#index as */*
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (2.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 165ms (Views: 0.7ms | ActiveRecord: 11.8ms | Allocations: 2651)
+
+
