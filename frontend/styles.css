@@ -42,7 +42,7 @@ input{
   text-align: center;
 }
 
-button {
+button.li {
   font-size: .5em;
   color: #fff;
   background-color: rgb(216, 0, 0);
