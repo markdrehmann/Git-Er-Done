@@ -42,7 +42,7 @@ function getLists() {
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
     .then(data => obj = data)
-    .then(() => console.log(obj))
+    .then(() => obj.forEach(list => makeListCard(list)))
 }
 
 document.addEventListener("DOMContentLoaded", 
