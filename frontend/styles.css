@@ -23,7 +23,6 @@ div.list {
   width: 300px;
   box-shadow: 10px 10px grey;
   padding: 10px;
-  /* border-radius: 0px; */
   text-align: center;
   display: block;
   margin-left: auto;
@@ -33,8 +32,6 @@ div.list {
 
 li {
   list-style: none;
-  /* text-align: center; */
-  /* padding-right: 20px; */
 }
 
 ul {
@@ -42,7 +39,7 @@ ul {
 }
 
 input{
-  text-align:center;
+  text-align: center;
 }
 
 button {
