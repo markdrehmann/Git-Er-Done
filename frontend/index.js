@@ -35,7 +35,8 @@ function makeListCard(list) {
   //   ul.appendChild(li);
   // });
 
-  main.appendChild(card);
+  let br = document.createElement("br");
+  main.append(card, br);
 }
 
 function getLists() {
