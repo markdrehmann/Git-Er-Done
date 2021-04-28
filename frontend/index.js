@@ -6,7 +6,18 @@ class List {
   }
 }
 
-const main = document.querySelector("main")
+const main = document.querySelector("main");
+const allLists = [];
+
+function getLists() {
+  fetch("http://localhost:3000/lists")
+    .then(res => res.json())
+    .then(data => lists = data)
+    .then(() => lists.forEach(list => allLists.push(new List(list.title, list.archived, list.tasks))))
+    // .then(lists => lists.forEach(list => makeListCard(list)))
+}
+
+// lists.forEach(list => allLists.push(new List(list.title, list.archived, list.tasks)))
 
 function makeListCard(list) {
   let card = document.createElement("div");
@@ -37,14 +48,6 @@ function makeListCard(list) {
 
   let br = document.createElement("br");
   main.append(card, br);
-}
-
-function getLists() {
-  fetch("http://localhost:3000/lists")
-    .then(res => res.json())
-    // .then(data => lists = data)
-    .then(lists => lists.forEach(list => makeListCard(list)))
-    // .then(() => lists.forEach(list => makeListCard(list)))
 }
 
 document.addEventListener("DOMContentLoaded", 
