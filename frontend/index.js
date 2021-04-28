@@ -8,29 +8,21 @@ class List {
 }
 
 const main = document.querySelector("main");
-const allLists = [];
+
+function makeInstances(obj) {
+  return obj.map(list => new List(list.id, list.title, list.archived, list.tasks))
+}
 
 function getLists() {
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
-    .then(data => lists = data)
-    .then(() => lists.forEach(list => allLists.push(new List(list.id, list.title, list.archived, list.tasks))))
-    // .then(lists => lists.forEach(list => makeListCard(list)))
-}
-
-// lists.forEach(list => allLists.push(new List(list.title, list.archived, list.tasks)))
-
-function createListCards(allLists) {
-  allLists.forEach(list => makeListCard(list))
+    .then(lists => makeInstances(lists))
+    .then(array => array.forEach(list => makeListCard(list)))
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   getLists();
-  createListCards(allLists);
 });
-// document.addEventListener("DOMContentLoaded", 
-// getLists()
-// )
 
 function makeListCard(list) {
   let card = document.createElement("div");
