@@ -42,8 +42,9 @@ function makeListCard(list) {
 function getLists() {
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
-    .then(data => obj = data)
-    .then(() => obj.forEach(list => makeListCard(list)))
+    // .then(data => lists = data)
+    .then(lists => lists.forEach(list => makeListCard(list)))
+    // .then(() => lists.forEach(list => makeListCard(list)))
 }
 
 document.addEventListener("DOMContentLoaded", 
