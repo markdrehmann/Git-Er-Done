@@ -6,3 +6,9 @@ Things to do:
 
 let l = new List(obj[0].title, obj[0].archived, obj[0].tasks)
 
+
+FLOW:
+- get data from server
+- turn the data into instances of List
+- use this array of list instances to create Cards of html
+
