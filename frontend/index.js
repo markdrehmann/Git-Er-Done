@@ -45,7 +45,7 @@ function makeListCard(list) {
   // THIS SECTION IS GOING TO BE ADDING li TASKS TO EACH LIST
   list.tasks.forEach(task => {
     let li = document.createElement("li");
-    li.innerHTML = `<li><input type="checkbox">${task.description}<button class="li">x</button></li>`;
+    li.innerHTML = `<input type="checkbox">${task.description}<button class="li">x</button>`;
   //   let releaseButton = document.createElement("button");
   //   releaseButton.classList.add("release");
   //   releaseButton.setAttribute("data-pokemon-id", `${pokemon.id}`);
