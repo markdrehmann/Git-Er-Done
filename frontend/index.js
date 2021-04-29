@@ -42,16 +42,18 @@ function makeListCard(list) {
 
   card.append(h3, ul, taskForm, btn);
 
-  // THIS SECTION IS GOING TO BE ADDING li TASKS TO EACH LIST
   list.tasks.forEach(task => {
     let li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox">${task.description}<button class="li">x</button>`;
-  //   let releaseButton = document.createElement("button");
-  //   releaseButton.classList.add("release");
-  //   releaseButton.setAttribute("data-pokemon-id", `${pokemon.id}`);
-  //   releaseButton.innerText = "Release";
-  //   releaseButton.addEventListener("click", event => releasePokemon(event));
-  //   li.appendChild(releaseButton);
+    let input = document.createElement("input");
+    input.type = "checkbox";
+    input.addEventListener("click", event => toggleCompleted(event));
+    let btn = document.createElement("button");
+    btn.classList = "li";
+    btn.innerText = "x";
+    btn.addEventListener("click", event => deleteTask(event));
+    li.innerText = `${task.description}`;
+    li.prepend(input);
+    li.appendChild(btn);
     ul.appendChild(li);
   });
 
@@ -66,4 +68,14 @@ form.addEventListener("submit", event => newList(event));
 function newList(event) {
   event.preventDefault();
   console.log("form submitted");
+}
+// this will have fetch DELETE
+function deleteTask(event) {
+  event.preventDefault();
+  console.log("delete this task, yo!")
+}
+// this is fetch PATCH? updates if task is completed or not
+function toggleCompleted(event) {
+  event.preventDefault();
+  console.log("this should toggle if task is completed")
 }
