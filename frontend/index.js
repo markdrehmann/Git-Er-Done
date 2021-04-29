@@ -57,4 +57,13 @@ function makeListCard(list) {
 
   let br = document.createElement("br");
   main.append(card, br);
+};
+
+const form = document.querySelector("form");
+form.addEventListener("submit", event => newList(event));
+
+// this function will get a fetch POST inside of it
+function newList(event) {
+  event.preventDefault();
+  console.log("form submitted");
 }
