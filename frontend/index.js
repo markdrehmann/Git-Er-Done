@@ -38,7 +38,7 @@ function makeListCard(list) {
   let btn = document.createElement("button");
   btn.innerText = "Delete List";
   btn.setAttribute("data-list-id", `${list.id}`)
-  // btn.addEventListener("click", event => deleteList(event));
+  btn.addEventListener("click", event => deleteList(event));
 
   card.append(h3, ul, taskForm, btn);
 
@@ -68,6 +68,7 @@ form.addEventListener("submit", event => newList(event));
 function newList(event) {
   event.preventDefault();
   console.log("form submitted");
+  // event.target.reset??
 }
 // this will have fetch DELETE
 function deleteTask(event) {
@@ -78,4 +79,15 @@ function deleteTask(event) {
 function toggleCompleted(event) {
   event.preventDefault();
   console.log("this should toggle if task is completed")
+}
+// fetch DELETE entire list
+function deleteList(event) {
+  event.preventDefault();
+  console.log("this will delete the whole list")
+}
+// fetch POST
+function newTask(event) {
+  event.preventDefault();
+  console.log("adding new task!");
+  // event.target.reset??
 }
