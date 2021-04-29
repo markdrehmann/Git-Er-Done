@@ -34,7 +34,7 @@ function makeListCard(list) {
   let ul = document.createElement("ul");
   let taskForm = document.createElement("form");
   // taskForm may need an ID to attach it to it's list
-  taskForm.innerHTML = '<input type="text" name="task[description]" placeholder="New Task"><input type="submit" style="display: none">';
+  taskForm.innerHTML = '<input type="text" name="task[description]" placeholder="Add to List"><input type="submit" style="display: none">';
   let btn = document.createElement("button");
   btn.innerText = "Delete List";
   btn.setAttribute("data-list-id", `${list.id}`)
