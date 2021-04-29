@@ -38,22 +38,22 @@ function makeListCard(list) {
   let btn = document.createElement("button");
   btn.innerText = "Delete List";
   btn.setAttribute("data-list-id", `${list.id}`)
-  // btn.addEventListener("click", event => addPokemon(event));
+  // btn.addEventListener("click", event => deleteList(event));
 
   card.append(h3, ul, taskForm, btn);
 
   // THIS SECTION IS GOING TO BE ADDING li TASKS TO EACH LIST
-  // trainer.pokemons.forEach(pokemon => {
-  //   let li = document.createElement("li");
-  //   li.innerText = `${pokemon.nickname} (${pokemon.species})`;
+  list.tasks.forEach(task => {
+    let li = document.createElement("li");
+    li.innerHTML = `<li><input type="checkbox">${task.description}<button class="li">x</button></li>`;
   //   let releaseButton = document.createElement("button");
   //   releaseButton.classList.add("release");
   //   releaseButton.setAttribute("data-pokemon-id", `${pokemon.id}`);
   //   releaseButton.innerText = "Release";
   //   releaseButton.addEventListener("click", event => releasePokemon(event));
   //   li.appendChild(releaseButton);
-  //   ul.appendChild(li);
-  // });
+    ul.appendChild(li);
+  });
 
   let br = document.createElement("br");
   main.append(card, br);
