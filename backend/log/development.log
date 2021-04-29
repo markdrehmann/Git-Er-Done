@@ -2001,3 +2001,64 @@ Processing by ListsController#index as HTML
 Completed 200 OK in 31ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 2204)
 
 
+Started GET "/lists" for ::1 at 2021-04-28 21:09:08 -0500
+Processing by ListsController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (8.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 123ms (Views: 1.0ms | ActiveRecord: 15.4ms | Allocations: 2725)
+
+
+Started GET "/lists" for ::1 at 2021-04-28 21:12:38 -0500
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (5.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 116ms (Views: 0.3ms | ActiveRecord: 10.1ms | Allocations: 15375)
+
+
+Started GET "/lists" for ::1 at 2021-04-28 21:12:42 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2227)
+
+
+Started GET "/lists" for ::1 at 2021-04-28 21:13:05 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2227)
+
+
+Started GET "/lists" for ::1 at 2021-04-29 12:14:55 -0500
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (2.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 139ms (Views: 0.5ms | ActiveRecord: 8.2ms | Allocations: 15381)
+
+
