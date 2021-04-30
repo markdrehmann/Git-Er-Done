@@ -5,4 +5,9 @@ class ListsController < ApplicationController
     :tasks => {:only => [:description, :completed]},
   }, :except => [:created_at, :updated_at])
   end
+
+  def create
+    list = List.create(title: params[:title])
+    render json: list, except: [:created_at, :updated_at]
+  end
 end
