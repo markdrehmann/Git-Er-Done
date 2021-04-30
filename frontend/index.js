@@ -65,6 +65,14 @@ function makeListCard(list) {
 const form = document.querySelector("form");
 form.addEventListener("submit", event => newList(event));
 
+// fetch("http://localhost:3000/lists", {
+//   method: "POST",
+//   headers: { "Content-Type" : "application/json" },
+//   body: JSON.stringify({"title" : `${title}`})
+// })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+
 // this function will get a fetch POST inside of it
 function newList(event) {
   event.preventDefault();
