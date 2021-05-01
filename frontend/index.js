@@ -33,8 +33,12 @@ function makeListCard(list) {
   h3.innerText = `${list.title}`;
   let ul = document.createElement("ul");
   let taskForm = document.createElement("form");
-  // taskForm may need an ID to attach it to it's list
-  taskForm.innerHTML = '<input type="text" name="task[description]" placeholder="Add to List"><input type="submit" style="display: none">';
+  let tInput = document.createElement("input");
+  tInput.type = "text";
+  tInput.id = "description";
+  tInput.placeholder = "Add to List";
+  tInput.setAttribute("data-list-id", `${list.id}`);
+  taskForm.appendChild(tInput)
   taskForm.addEventListener("submit", event => newTask(event));
   let btn = document.createElement("button");
   btn.innerText = "Delete List";
@@ -52,6 +56,7 @@ function makeListCard(list) {
       let btn = document.createElement("button");
       btn.classList = "li";
       btn.innerText = "x";
+      btn.setAttribute("data-task-id", `${task.id}`);
       btn.addEventListener("click", event => deleteTask(event));
       li.innerText = `${task.description}`;
       li.prepend(input);
