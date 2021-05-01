@@ -35,7 +35,7 @@ function makeListCard(list) {
   let taskForm = document.createElement("form");
   let tInput = document.createElement("input");
   tInput.type = "text";
-  tInput.id = "description";
+  tInput.id = `task list ${list.id}`;
   tInput.placeholder = "Add to List";
   tInput.setAttribute("data-list-id", `${list.id}`);
   taskForm.appendChild(tInput)
@@ -114,6 +114,17 @@ function deleteList(event) {
 // fetch POST
 function newTask(event) {
   event.preventDefault();
-  console.log("adding new task!");
-  // event.target.reset??
+  let input = event.currentTarget;
+  let description = input.value;
+  let id = input.getAttribute("data-list-id");
+  console.log(description);
+  event.target.reset();
+  fetch("http://localhost:3000/tasks", {
+  method: "POST",
+  headers: { "Content-Type" : "application/json" },
+  body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
+  })
+  .then(response => response.json())
+  // .then(list => new List(list.id, list.title, list.archived, list.tasks))
+  .then(task => console.log(task))
 }
