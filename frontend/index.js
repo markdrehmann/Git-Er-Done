@@ -43,20 +43,22 @@ function makeListCard(list) {
 
   card.append(h3, ul, taskForm, btn);
 
-  list.tasks.forEach(task => {
-    let li = document.createElement("li");
-    let input = document.createElement("input");
-    input.type = "checkbox";
-    input.addEventListener("click", event => toggleCompleted(event));
-    let btn = document.createElement("button");
-    btn.classList = "li";
-    btn.innerText = "x";
-    btn.addEventListener("click", event => deleteTask(event));
-    li.innerText = `${task.description}`;
-    li.prepend(input);
-    li.appendChild(btn);
-    ul.appendChild(li);
-  });
+  if (!list.tasks.empty) {
+    list.tasks.forEach(task => {
+      let li = document.createElement("li");
+      let input = document.createElement("input");
+      input.type = "checkbox";
+      input.addEventListener("click", event => toggleCompleted(event));
+      let btn = document.createElement("button");
+      btn.classList = "li";
+      btn.innerText = "x";
+      btn.addEventListener("click", event => deleteTask(event));
+      li.innerText = `${task.description}`;
+      li.prepend(input);
+      li.appendChild(btn);
+      ul.appendChild(li);
+    });
+  }
 
   let br = document.createElement("br");
   main.append(card, br);
@@ -65,8 +67,6 @@ function makeListCard(list) {
 const form = document.querySelector("form");
 form.addEventListener("submit", event => newList(event));
 
-
-// this function will get a fetch POST inside of it
 function newList(event) {
   event.preventDefault();
   let title = document.getElementById("title").value;
@@ -78,7 +78,8 @@ function newList(event) {
   body: JSON.stringify({"title" : `${title}`})
   })
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(list => new List(list.id, list.title, list.archived, list.tasks))
+  .then(list => makeListCard(list))
 }
 
 // this will have fetch DELETE
