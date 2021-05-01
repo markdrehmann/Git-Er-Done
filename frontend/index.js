@@ -95,7 +95,15 @@ function toggleCompleted(event) {
 // fetch DELETE entire list
 function deleteList(event) {
   event.preventDefault();
-  console.log("this will delete the whole list")
+  let btn = event.target;
+  let id = btn.getAttribute("data-list-id");
+  btn.parentElement.remove();
+
+  fetch("http://localhost:3000/lists"+`/${id}`, {
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
 }
 // fetch POST
 function newTask(event) {
