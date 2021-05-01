@@ -10,4 +10,10 @@ class ListsController < ApplicationController
     list = List.create(title: params[:title])
     render json: list, except: [:created_at, :updated_at]
   end
+
+  def destroy
+    list = List.find_by(id: params[:id])
+    list.delete
+    render json: list
+  end
 end

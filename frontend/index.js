@@ -92,7 +92,7 @@ function toggleCompleted(event) {
   event.preventDefault();
   console.log("this should toggle if task is completed")
 }
-// fetch DELETE entire list
+
 function deleteList(event) {
   event.preventDefault();
   let btn = event.target;
@@ -105,6 +105,7 @@ function deleteList(event) {
   .then(res => res.json())
   .then(data => console.log(data))
 }
+
 // fetch POST
 function newTask(event) {
   event.preventDefault();
