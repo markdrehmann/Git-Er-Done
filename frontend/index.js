@@ -65,13 +65,6 @@ function makeListCard(list) {
 const form = document.querySelector("form");
 form.addEventListener("submit", event => newList(event));
 
-// fetch("http://localhost:3000/lists", {
-//   method: "POST",
-//   headers: { "Content-Type" : "application/json" },
-//   body: JSON.stringify({"title" : `${title}`})
-// })
-//   .then(response => response.json())
-//   .then(data => console.log(data))
 
 // this function will get a fetch POST inside of it
 function newList(event) {
@@ -79,7 +72,15 @@ function newList(event) {
   let title = document.getElementById("title").value;
   console.log(title);
   event.target.reset();
+  fetch("http://localhost:3000/lists", {
+  method: "POST",
+  headers: { "Content-Type" : "application/json" },
+  body: JSON.stringify({"title" : `${title}`})
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
 }
+
 // this will have fetch DELETE
 function deleteTask(event) {
   event.preventDefault();
