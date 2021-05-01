@@ -76,8 +76,9 @@ form.addEventListener("submit", event => newList(event));
 // this function will get a fetch POST inside of it
 function newList(event) {
   event.preventDefault();
-  console.log("form submitted");
-  // event.target.reset??
+  let title = document.getElementById("title").value;
+  console.log(title);
+  event.target.reset();
 }
 // this will have fetch DELETE
 function deleteTask(event) {
