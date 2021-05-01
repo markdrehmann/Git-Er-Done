@@ -1,2 +1,12 @@
 class TasksController < ApplicationController
+  def create
+    task = Task.create(description: params[:description], list_id: params[:list_id])
+    render json: task, except: [:created_at, :updated_at]
+  end
+
+  def destroy
+    task = Task.find_by(id: params[:task_id])
+    task.delete
+    render json: task
+  end
 end

@@ -3107,3 +3107,118 @@ Processing by ListsController#destroy as */*
 Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 934)
 
 
+Started POST "/lists" for ::1 at 2021-04-30 21:17:41 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"Walmart", "list"=>{"title"=>"Walmart"}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mList Create (3.0ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Walmart"], ["created_at", "2021-05-01 02:17:41.122878"], ["updated_at", "2021-05-01 02:17:41.122878"]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 10.0ms | Allocations: 1691)
+
+
+Started DELETE "/lists/17" for ::1 at 2021-04-30 21:17:44 -0500
+Processing by ListsController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:15:in `destroy'
+  [1m[36mList Destroy (8.7ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/lists_controller.rb:16:in `destroy'
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 10.1ms | Allocations: 935)
+
+
+Started POST "/lists" for ::1 at 2021-04-30 21:18:34 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"", "list"=>{"title"=>""}}
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started GET "/lists" for ::1 at 2021-04-30 21:18:52 -0500
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2205)
+
+
+Started DELETE "/lists/null" for ::1 at 2021-04-30 21:19:01 -0500
+Processing by ListsController#destroy as */*
+  Parameters: {"id"=>"null"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:15:in `destroy'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 870)
+
+
+  
+NoMethodError (undefined method `delete' for nil:NilClass):
+  
+app/controllers/lists_controller.rb:16:in `destroy'
+Started POST "/lists" for ::1 at 2021-04-30 21:19:09 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"", "list"=>{"title"=>""}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started DELETE "/lists/null" for ::1 at 2021-04-30 21:19:15 -0500
+Processing by ListsController#destroy as */*
+  Parameters: {"id"=>"null"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:15:in `destroy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 860)
+
+
+  
+NoMethodError (undefined method `delete' for nil:NilClass):
+  
+app/controllers/lists_controller.rb:16:in `destroy'
+Started GET "/lists" for ::1 at 2021-04-30 21:19:17 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2207)
+
+
+Started GET "/lists" for ::1 at 2021-05-01 10:31:10 -0500
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as */*
+  [1m[36mList Load (2.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 127ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 15406)
+
+
+Started POST "/lists" for ::1 at 2021-05-01 10:31:14 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"Walmart", "list"=>{"title"=>"Walmart"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mList Create (2.7ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Walmart"], ["created_at", "2021-05-01 15:31:14.785944"], ["updated_at", "2021-05-01 15:31:14.785944"]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 6.6ms | Allocations: 1965)
+
+
+Started DELETE "/lists/18" for ::1 at 2021-05-01 10:31:18 -0500
+Processing by ListsController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:15:in `destroy'
+  [1m[36mList Destroy (3.5ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/lists_controller.rb:16:in `destroy'
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 3.8ms | Allocations: 1095)
+
+
