@@ -69,6 +69,8 @@ function makeListCard(list) {
   main.append(card, br);
 };
 
+
+
 const form = document.querySelector("form");
 form.addEventListener("submit", event => newList(event));
 
@@ -116,7 +118,6 @@ function newTask(event) {
   let input = event.target.firstElementChild;
   let description = input.value;
   let id = input.getAttribute("data-list-id");
-  console.log(description);
   event.target.reset();
   fetch("http://localhost:3000/tasks", {
   method: "POST",
@@ -124,6 +125,6 @@ function newTask(event) {
   body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
   })
   .then(response => response.json())
-  // .then(list => new List(list.id, list.title, list.archived, list.tasks))
   .then(task => console.log(task))
+  .then(() => getLists());
 }
