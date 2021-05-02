@@ -14,6 +14,7 @@ function makeInstances(obj) {
 }
 
 function getLists() {
+  main.innerHTML = "";
   fetch("http://localhost:3000/lists")
     .then(res => res.json())
     .then(lists => makeInstances(lists))
