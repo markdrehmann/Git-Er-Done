@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = Task.find_by(id: params[:task_id])
+    task = Task.find_by(id: params[:id])
     task.delete
     render json: task
   end

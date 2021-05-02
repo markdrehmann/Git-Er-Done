@@ -90,11 +90,19 @@ function newList(event) {
   .then(list => makeListCard(list))
 }
 
-// this will have fetch DELETE
 function deleteTask(event) {
   event.preventDefault();
-  console.log(event.target)
+  let btn = event.target;
+  let id = btn.getAttribute("data-task-id");
+  btn.parentElement.remove();
+
+  fetch("http://localhost:3000/tasks"+`/${id}`, {
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
 }
+
 // this is fetch PATCH? updates if task is completed or not
 function toggleCompleted(event) {
   event.preventDefault();
