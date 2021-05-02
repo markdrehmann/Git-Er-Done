@@ -90,7 +90,7 @@ function newList(event) {
 // this will have fetch DELETE
 function deleteTask(event) {
   event.preventDefault();
-  console.log("delete this task, yo!")
+  console.log(event.target)
 }
 // this is fetch PATCH? updates if task is completed or not
 function toggleCompleted(event) {
@@ -111,10 +111,9 @@ function deleteList(event) {
   .then(data => console.log(data))
 }
 
-// fetch POST
 function newTask(event) {
   event.preventDefault();
-  let input = event.currentTarget;
+  let input = event.target.firstElementChild;
   let description = input.value;
   let id = input.getAttribute("data-list-id");
   console.log(description);
