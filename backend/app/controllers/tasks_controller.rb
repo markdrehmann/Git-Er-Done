@@ -9,4 +9,11 @@ class TasksController < ApplicationController
     task.delete
     render json: task
   end
+
+  def update
+    task = Task.find_by(id: params[:id])
+    task.completed = !task.completed
+    task.save
+    render json: task
+  end
 end
