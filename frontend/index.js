@@ -108,7 +108,11 @@ function deleteTask(event) {
 // this is fetch PATCH? updates if task is completed or not
 function toggleCompleted(event) {
   event.preventDefault();
-  console.log("this should toggle if task is completed")
+  fetch("http://localhost:3000/tasks"+`/${id}`, {
+    method: "PATCH"
+  })
+  .then(res => res.json())
+  .then(() => console.log("what now?"))
 }
 
 function deleteList(event) {
