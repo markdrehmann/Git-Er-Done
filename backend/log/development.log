@@ -4325,3 +4325,75 @@ Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 13.8ms | Allocations: 230
 
 
   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/lists" for ::1 at 2021-05-02 21:07:06 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"", "list"=>{"title"=>""}}
+Completed 200 OK in 32ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/lists" for ::1 at 2021-05-02 21:07:10 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (1.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 2578)
+
+
+Started POST "/lists" for ::1 at 2021-05-02 21:07:31 -0500
+Processing by ListsController#create as */*
+  Parameters: {"title"=>"Monday To-Do", "list"=>{"title"=>"Monday To-Do"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mList Create (2.7ms)[0m  [1m[32mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Monday To-Do"], ["created_at", "2021-05-03 02:07:31.578352"], ["updated_at", "2021-05-03 02:07:31.578352"]]
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:10:in `create'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 6.0ms | Allocations: 1691)
+
+
+Started DELETE "/lists/2" for ::1 at 2021-05-02 21:07:40 -0500
+Processing by ListsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:15:in `destroy'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/controllers/lists_controller.rb:16:in `destroy'
+  [1m[36mTask Destroy (2.7ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/lists_controller.rb:17:in `block in destroy'
+  [1m[36mTask Destroy (4.0ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/lists_controller.rb:17:in `block in destroy'
+  [1m[36mTask Destroy (3.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/lists_controller.rb:17:in `block in destroy'
+  [1m[36mList Destroy (3.2ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/lists_controller.rb:19:in `destroy'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 13.5ms | Allocations: 2582)
+
+
+Started POST "/tasks" for ::1 at 2021-05-02 21:07:46 -0500
+Processing by TasksController#create as */*
+  Parameters: {"description"=>"Wake up", "list_id"=>"24", "task"=>{"description"=>"Wake up", "list_id"=>"24"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `create'
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:3:in `create'
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "created_at", "updated_at", "list_id") VALUES (?, ?, ?, ?)[0m  [["description", "Wake up"], ["created_at", "2021-05-03 02:07:46.669615"], ["updated_at", "2021-05-03 02:07:46.669615"], ["list_id", 24]]
+  ↳ app/controllers/tasks_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `create'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 4.0ms | Allocations: 2502)
+
+
+Started GET "/lists" for ::1 at 2021-05-02 21:07:46 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2403)
+
+

@@ -78,16 +78,18 @@ form.addEventListener("submit", event => newList(event));
 function newList(event) {
   event.preventDefault();
   let title = document.getElementById("title").value;
-  console.log(title);
-  event.target.reset();
-  fetch("http://localhost:3000/lists", {
-  method: "POST",
-  headers: { "Content-Type" : "application/json" },
-  body: JSON.stringify({"title" : `${title}`})
-  })
-  .then(response => response.json())
-  .then(list => new List(list.id, list.title, list.archived, list.tasks))
-  .then(list => makeListCard(list))
+  if (title) {
+    console.log(title);
+    event.target.reset();
+    fetch("http://localhost:3000/lists", {
+    method: "POST",
+    headers: { "Content-Type" : "application/json" },
+    body: JSON.stringify({"title" : `${title}`})
+    })
+    .then(response => response.json())
+    .then(list => new List(list.id, list.title, list.archived, list.tasks))
+    .then(list => makeListCard(list))
+  }
 }
 
 function deleteTask(event) {
