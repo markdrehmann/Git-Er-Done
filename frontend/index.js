@@ -53,6 +53,12 @@ function makeListCard(list) {
       let li = document.createElement("li");
       let input = document.createElement("input");
       input.type = "checkbox";
+      input.setAttribute("data-task-id", `${task.id}`)
+      if (task.completed == true) {
+        input.checked = true
+      } else {
+        input.checked = false
+      };
       input.addEventListener("click", event => toggleCompleted(event));
       let btn = document.createElement("button");
       btn.classList = "li";
@@ -69,8 +75,6 @@ function makeListCard(list) {
   let br = document.createElement("br");
   main.append(card, br);
 };
-
-
 
 const form = document.querySelector("form");
 form.addEventListener("submit", event => newList(event));
@@ -105,14 +109,16 @@ function deleteTask(event) {
   .then(data => console.log(data))
 }
 
-// this is fetch PATCH? updates if task is completed or not
 function toggleCompleted(event) {
   event.preventDefault();
+  let input = event.target;
+  let id = input.getAttribute("data-task-id");
   fetch("http://localhost:3000/tasks"+`/${id}`, {
     method: "PATCH"
   })
   .then(res => res.json())
-  .then(() => console.log("what now?"))
+  .then(() => console.log("Toggle Completed"))
+  .then(() => getLists())
 }
 
 function deleteList(event) {
