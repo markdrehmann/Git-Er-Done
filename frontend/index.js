@@ -94,6 +94,8 @@ function newList(event) {
     .then(response => response.json())
     .then(list => new List(list.id, list.title, list.archived, list.tasks))
     .then(list => makeListCard(list))
+  } else {
+    alert("Title can't be blank!");
   }
 }
 
@@ -139,14 +141,18 @@ function newTask(event) {
   event.preventDefault();
   let input = event.target.firstElementChild;
   let description = input.value;
-  let id = input.getAttribute("data-list-id");
-  event.target.reset();
-  fetch("http://localhost:3000/tasks", {
-  method: "POST",
-  headers: { "Content-Type" : "application/json" },
-  body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
-  })
-  .then(response => response.json())
-  .then(task => console.log(task))
-  .then(() => getLists());
+  if (description) {
+    let id = input.getAttribute("data-list-id");
+    event.target.reset();
+    fetch("http://localhost:3000/tasks", {
+    method: "POST",
+    headers: { "Content-Type" : "application/json" },
+    body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
+    })
+    .then(response => response.json())
+    .then(task => console.log(task))
+    .then(() => getLists());
+  } else {
+    alert("Can't be blank!");
+  }
 }
