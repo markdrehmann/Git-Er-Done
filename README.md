@@ -1,9 +1,9 @@
 # Git Er Done!
 
-Welcome to Hoop It Up! This app was created with the intention to create and track pickup basketball games. It is a basic Rails project to fulfill project requirements at Flatiron School. Further functionality and development will continue in later projects.
+Welcome to Git Er Done! This app was created with the intention to create to-do lists and tasks that are easily manageable. It is a JavaScript SPA with a Rails API backend built to fulfill project requirements at Flatiron School. Further functionality and development will continue in later projects.
 
 Installation
-Clone this repository and execute:
+Clone this repository and in the `/backend` directory execute:
 
 $bundle install
 Then execute:
@@ -11,16 +11,19 @@ Then execute:
 $rails db:migrate
 to create the database.
 
-Execute:
+To start the backend server, execute:
 
 $rails s
-and navigate to localhost:3000 to preview the app.
+
+Switch back to main directory and run:
+
+$open index.html
 
 Usage
-Usage of this Rails basic CRUD app is for the sole purposes of entertainment and interacting with a preliminary basketball scheduling app.
+Usage of this SPA is for entertainment and educational purposes.
 
 License
 The app is available as open source under the terms of the MIT License.
 
 Code of Conduct
-Everyone interacting in the Hoop It Up on Rails project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting in the Git Er Done project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
