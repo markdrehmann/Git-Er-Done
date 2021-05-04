@@ -2,7 +2,8 @@
 
 Welcome to Git Er Done! This app was created with the intention to create to-do lists and tasks that are easily manageable. It is a JavaScript SPA with a Rails API backend built to fulfill project requirements at Flatiron School. Further functionality and development will continue in later projects.
 
-Installation
+### Installation
+
 Clone this repository and in the `/backend` directory execute:
 
 `bundle install`
@@ -19,11 +20,14 @@ Switch back to main directory and run:
 
 `open index.html`
 
-Usage
+### Usage
+
 Usage of this SPA is for entertainment and educational purposes.
 
-License
+### License
+
 The app is available as open source under the terms of the MIT License.
 
-Code of Conduct
+### Code of Conduct
+
 Everyone interacting in the Git Er Done project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
