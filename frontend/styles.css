@@ -50,3 +50,7 @@ button.li {
   float: right;
   margin-right: 40px;
 }
+
+strike {
+  color: rgb(114, 114, 114);
+}
