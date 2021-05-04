@@ -5,19 +5,19 @@ Welcome to Git Er Done! This app was created with the intention to create to-do 
 Installation
 Clone this repository and in the `/backend` directory execute:
 
-$bundle install
-Then execute:
+`bundle install`
 
-$rails db:migrate
-to create the database.
+Then, to create the database, execute:
+
+`rails db:migrate`
 
 To start the backend server, execute:
 
-$rails s
+`rails s`
 
 Switch back to main directory and run:
 
-$open index.html
+`open index.html`
 
 Usage
 Usage of this SPA is for entertainment and educational purposes.
