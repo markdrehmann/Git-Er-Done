@@ -5312,3 +5312,127 @@ Processing by ListsController#index as */*
 Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 2318)
 
 
+Started GET "/lists" for ::1 at 2021-05-03 20:48:42 -0500
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListsController#index as HTML
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 129ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 15480)
+
+
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."description" = ? LIMIT ?[0m  [["description", "Bacon"], ["LIMIT", 1]]
+Started GET "/lists" for ::1 at 2021-05-03 20:52:49 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (1.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 77ms (Views: 2.0ms | ActiveRecord: 2.2ms | Allocations: 2339)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 20:54:34 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2338)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 20:55:49 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2338)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 21:00:17 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 1.0ms | ActiveRecord: 1.5ms | Allocations: 2338)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 21:00:33 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2318)
+
+
+Started PATCH "/tasks/11" for ::1 at 2021-05-03 21:00:39 -0500
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "completed" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed", 0], ["updated_at", "2021-05-04 02:00:39.978085"], ["id", 11]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+Completed 200 OK in 33ms (Views: 6.5ms | ActiveRecord: 6.2ms | Allocations: 3452)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 21:00:40 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 2318)
+
+
+Started PATCH "/tasks/11" for ::1 at 2021-05-03 21:00:41 -0500
+Processing by TasksController#update as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mTask Update (0.4ms)[0m  [1m[33mUPDATE "tasks" SET "completed" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed", 1], ["updated_at", "2021-05-04 02:00:41.291713"], ["id", 11]]
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:16:in `update'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 2921)
+
+
+Started GET "/lists" for ::1 at 2021-05-03 21:00:41 -0500
+Processing by ListsController#index as */*
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 24]]
+  ↳ app/controllers/lists_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2318)
+
+

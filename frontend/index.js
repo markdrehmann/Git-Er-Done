@@ -55,9 +55,11 @@ function makeListCard(list) {
       input.type = "checkbox";
       input.setAttribute("data-task-id", `${task.id}`)
       if (task.completed == true) {
-        input.checked = true
+        input.checked = true;
+        li.innerHTML = `${task.description}`.strike();
       } else {
-        input.checked = false
+        input.checked = false;
+        li.innerText = `${task.description}`;
       };
       input.addEventListener("click", event => toggleCompleted(event));
       let btn = document.createElement("button");
@@ -65,7 +67,6 @@ function makeListCard(list) {
       btn.innerText = "x";
       btn.setAttribute("data-task-id", `${task.id}`);
       btn.addEventListener("click", event => deleteTask(event));
-      li.innerText = `${task.description}`;
       li.prepend(input);
       li.appendChild(btn);
       ul.appendChild(li);
