@@ -2,4 +2,4 @@ In index.js -- add more methods/functions to the List class - anything that has 
 
 Stretch:
 - possibly minimize lists / make lists expandable
-- easter egg with inigo montoya?
+- easter egg with inigo montoya
