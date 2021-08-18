@@ -16,7 +16,7 @@ To start the backend server, execute:
 
 `rails s`
 
-Switch back to main directory and run:
+Switch to the `/frontend` directory within the main directory and run:
 
 `open index.html`
 

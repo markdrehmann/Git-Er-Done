@@ -20,6 +20,8 @@ class List {
     tInput.id = `task list ${this.id}`;
     tInput.placeholder = "Add to List";
     tInput.setAttribute("data-list-id", this.id);
+    tInput.setAttribute("autocomplete", "off");
+
     taskForm.appendChild(tInput)
     taskForm.addEventListener("submit", event => newTask(event));
     let btn = document.createElement("button");
