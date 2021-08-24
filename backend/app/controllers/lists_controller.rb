@@ -13,9 +13,6 @@ class ListsController < ApplicationController
 
   def destroy
     list = List.find_by(id: params[:id])
-    # list.tasks.each do |task|
-    #   task.delete
-    # end
     list.destroy
     render json: list
   end
