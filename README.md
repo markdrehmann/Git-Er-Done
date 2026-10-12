@@ -1,6 +1,6 @@
 # Git Er Done!
 
-Welcome to Git Er Done! This app was created with the intention to create to-do lists and tasks that are easily manageable. It is a JavaScript SPA with a Rails API backend built to fulfill project requirements at Flatiron School. Further functionality and development will continue in later projects.
+Welcome to Git Er Done! This app was created with the intention to create to-do lists and tasks that are easily manageable. It is a JavaScript SPA with a Rails API backend. Further functionality and development will continue at a later date.
 
 ### Installation
 
